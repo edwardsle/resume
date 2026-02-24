@@ -6,7 +6,7 @@ const listJobs = [
   {
     title: "Embedded Software Engineer",
     company: "Iteris, Inc.",
-    location: "Santa Ana, Califonia",
+    location: "Santa Ana, California",
     logo: "iteris.png",
     workingStatus: "Aug 2022 to Present",
     tags: [
@@ -39,7 +39,7 @@ const listJobs = [
   {
     title: "Jr. Web Developer",
     company: "Dental Game Plan",
-    location: "Montrose, Califonia",
+    location: "Montrose, California",
     logo: "dentalgameplan.png",
     workingStatus: "Jun 2021 to Aug 2022",
     tags: [
@@ -77,7 +77,7 @@ const listJobs = [
   {
     title: "Video Editor · Camera Operator · Program Scheduler · IT Support",
     company: "Vietsky Television",
-    location: "Garden Grove, Califonia",
+    location: "Garden Grove, California",
     logo: "vietsky.png",
     workingStatus: "May 2018 to Mar 2022",
     tags: [
@@ -113,7 +113,7 @@ const listJobs = [
   {
     title: "Full-Stack Web Developer",
     company: "BolsaGroup",
-    location: "Garden Grove, Califonia",
+    location: "Garden Grove, California",
     logo: "bolsagroup.png",
     workingStatus: "Aug 2017 to Feb 2020",
     tags: [

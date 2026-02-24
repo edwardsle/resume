@@ -9,7 +9,7 @@ import Footer from '~/layouts/footer';
 
 export default function Resume() {
     return (
-      <div className="flex flex-wrap gap-y-20 overflow-auto">
+      <div className="flex flex-wrap gap-y-20">
         <Introduce />
         <Services />
         <Education />
