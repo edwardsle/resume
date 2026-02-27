@@ -52,7 +52,7 @@ const listJobs = [
       "Auto Scaling",
       "Amazon S3",
       "Amazon Connect",
-      "AWS API Gateway",      
+      "AWS API Gateway",
       "AWS Lambda",
       "IAM",
       "CloudWatch",
@@ -60,7 +60,7 @@ const listJobs = [
       "Serverless",
       "AWS DynamoDB",
       "Twilio",
-      "bulk SMS"
+      "bulk SMS",
     ],
     responsibility: [
       "Developed and maintained backend systems using PHP and CodeIgniter 4.",
@@ -90,7 +90,7 @@ const listJobs = [
       "NFS",
       "Samba",
       "Active Directory",
-      "Network Administration",      
+      "Network Administration",
       "SAN/NAS",
       "ENG",
       "CCU Control",
@@ -118,7 +118,7 @@ const listJobs = [
     workingStatus: "Aug 2017 to Feb 2020",
     tags: [
       "Full-stack",
-      "MySQL", 
+      "MySQL",
       "PHP",
       "JavaScript",
       "REST API",
@@ -149,14 +149,16 @@ const listJobs = [
 
 export default function Jobs() {
   return (
-    <section className="w-full p-4">
-      <SubTitle icon={faBriefcase} text="Jobs" />
-      <div className="grid gap-y-10">
+    <section className="w-full mx-auto px-4 py-20">
+      <SubTitle icon={faBriefcase} text="Experience" />
+
+      {/* Timeline container with vertical line */}
+      <div className="relative ml-8 mt-12 border-l-2 border-neutral-200 space-y-9">
         {listJobs.map((job) => (
           <Job
             key={job.company}
             title={job.title}
-            company={job.company}            
+            company={job.company}
             location={job.location}
             logo={job.logo}
             workingStatus={job.workingStatus}
