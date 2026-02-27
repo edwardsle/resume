@@ -10,14 +10,20 @@ const projects = [
     img_path: "2025-orinstream",
     first_img: "orinstream.gif",
     description: (
-      <div className="gap-y-5">
-        <h1 className="text-xl">Edge video streaming on Jetson ORIN</h1>
-        <p className="italic mt-3">IP Camera • GStreamer • Jetpack 5.1.1 • Docker • Web Server</p>
-        <p className="underline mt-3">Key achievements:</p>
-        <ul className="list-disc">
-          <li>Dockerized the app stack.</li>
-          <li>Streamed video to browsers & VLC.</li>
-          <li>Auto-updated hosts & containers.</li>
+      <div className="space-y-2 max-w-xl">
+        <h1 className="text-lg font-semibold">
+          Edge Video Streaming — Jetson Orin
+        </h1>
+
+        <p className="text-xs text-gray-300">
+          IP Camera · GStreamer · JetPack 6.1 · Docker · RTSP · WebRTC
+        </p>
+
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Dockerized full stack</li>
+          <li>Low-latency WebRTC & RTSP streaming</li>
+          <li>YOLO + TensorRT for Fast Object Detection</li>
+          <li>Automated host/container updates</li>
         </ul>
       </div>
     ),
@@ -26,21 +32,55 @@ const projects = [
     modalContent: <OrinStream />,
   },
   {
-    title: "Video Subtitle Generator",
+    title: "AI Video Processor",
     category: "ai",
     img_path: "2023-ai-subtitle-generator",
     first_img: "index.jpg",
-    description: "",
+    description: (
+      <div className="space-y-2 max-w-xl">
+        <h1 className="text-lg font-semibold">
+          Subtitle & Voiceover
+        </h1>
+
+        <p className="text-xs text-gray-300">
+          QtWidgets · ZeroMQ · Multithreading · Whisper · Google Translate · ElevenLabs
+        </p>
+
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>High-performance multi-threaded video processing engine</li>
+          <li>Parallel clip segmentation from single or multiple streams</li>
+          <li>Automatic subtitle generation & multilingual translation</li>
+          <li>AI-powered voiceover synthesis</li>
+        </ul>
+      </div>
+    ),
     year: 2023,
     external_link: false,
     modalContent: <OrinStream />,
   },
   {
-    title: "Interactive Voice Response For Pizzerias",
+    title: "IVR For Pizzerias",
     category: "ai",
     img_path: "2021-master-final-project",
     first_img: "ivr.jpg",
-    description: "",
+    description: (
+      <div className="space-y-2 max-w-xl">
+        <h1 className="text-lg font-semibold">
+          Pizza Ordering System
+        </h1>
+
+        <p className="text-xs text-gray-300">
+          ExpressJS · ReactJS · Vonage Voice API · IVR · SMS · Web
+        </p>
+
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Multi-channel ordering (phone, SMS, web)</li>
+          <li>Scalable IVR engine supporting 50 concurrent calls</li>
+          <li>Voice-programmed flows with custom NLP dictionary</li>
+          <li>Automated kitchen dispatch & order lifecycle management</li>
+        </ul>
+      </div>
+    ),
     year: 2021,
     external_link: false,
     modalContent: <OrinStream />,
@@ -63,6 +103,89 @@ const projects = [
     description: "",
     year: 2020,
     external_link: "https://nerdgearz.com/",
+    modalContent: <></>,
+  },
+  ,
+  {
+    title: "Image Denoising",
+    category: "ai",
+    img_path: "2019-image-denoising",
+    first_img: "ai-denoising.jpg",
+    description: (
+      <div className="space-y-2 max-w-xl">
+        <h1 className="text-lg font-semibold">
+          Deep Neural Networks
+        </h1>
+
+        <p className="text-xs text-gray-300">
+          Deep Learning · CNN · Low-Light Imaging · RGB Restoration
+        </p>
+
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Designed CNN-based pipeline for real-world low-light denoising</li>
+          <li>Trained directly on RGB images with authentic noise patterns</li>
+          <li>Restored image quality without exposure or ISO trade-offs</li>
+          <li>Benchmarked performance against BM3D baseline</li>
+        </ul>
+      </div>
+    ),
+    year: 2019,
+    external_link: "https://github.com/edwardsle/imagedenoise",
+    modalContent: <></>,
+  },
+  ,
+  {
+    title: "Half-Cheetah",
+    category: "ai",
+    img_path: "2019-genetic-algorithm",
+    first_img: "ai-genetic-alg.jpg",
+    description: (
+      <div className="space-y-2 max-w-xl">
+      <h1 className="text-lg font-semibold">
+        Neuroevolution in MuJoCo
+      </h1>
+
+      <p className="text-xs text-gray-300">
+        Python · OpenAI Gym · MuJoCo · Genetic Algorithms · Neural Networks
+      </p>
+
+      <ul className="text-sm list-disc list-inside space-y-1">
+        <li>Implemented GA-based neuroevolution for control policies</li>
+        <li>Targeted continuous control in Half-Cheetah simulation</li>
+        <li>Leveraged parallel evaluation for scalable population training</li>
+        <li>Demonstrated gradient-free reinforcement learning approach</li>
+      </ul>
+    </div>
+    ),
+    year: 2019,
+    external_link: "https://github.com/edwardsle/Genetic-Algorithm",
+    modalContent: <></>,
+  },
+  ,
+  {
+    title: "99Lookup",
+    category: "web",
+    img_path: "2018-99lookup",
+    first_img: "simple-search-engine.jpg",
+    description: (
+      <div className="space-y-2 max-w-xl">
+        <h1 className="text-lg font-semibold">
+          Search Engine Prototype
+        </h1>
+
+        <p className="text-xs text-gray-300">
+          Information Retrieval · Search Systems · Java · Servlet · MongoDB · SQL · Web Architecture
+        </p>
+
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Implemented web-based search application prototype</li>
+          <li>Explored backend search workflows using Java Servlets</li>
+          <li>Evaluated data storage strategies with MongoDB and SQL</li>
+        </ul>
+      </div>
+    ),
+    year: 2018,
+    external_link: "https://github.com/edwardsle/Search-Engine",
     modalContent: <></>,
   },
 ];
