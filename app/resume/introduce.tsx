@@ -34,10 +34,10 @@ function AnimatedLine({ text, className = "" }: { text: string; className?: stri
 
 export default function Introduce() {
   return (
-    <section className="w-full p-4">
+    <section className="w-full p-2 sm:p-4">
       <SubTitle icon={faHouseUser} text="Introduce" />
-      <div className="grid gap-y-8">
-        <div className="text-7xl font-light tracking-wide leading-tight">
+      <div className="grid gap-y-6 sm:gap-y-8">
+        <div className="text-3xl sm:text-5xl lg:text-7xl font-light tracking-wide leading-tight">
           <h1>
             <AnimatedLine text="Hi" />
             <span className="text-brand-300">—</span>
@@ -59,7 +59,7 @@ export default function Introduce() {
         </div>
 
         <motion.p
-          className="text-xl text-slate-400 leading-relaxed"
+          className="text-base sm:text-xl text-slate-400 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

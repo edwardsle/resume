@@ -192,7 +192,7 @@ export default function Projects() {
     <section className="w-full p-4">
       <SubTitle icon={faListCheck} text="Projects" />
       <div className="grid gap-y-10">
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {projects.map((work) => (
             <Project
               key={work.title}

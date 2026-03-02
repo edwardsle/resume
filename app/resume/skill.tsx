@@ -15,7 +15,7 @@ export default function Skill({ text, icon }: LanguageProps) {
           </div>
         </div>
         <div className="p-6 z-10 w-full">
-          <p className="inline-block text-center w-full font-sans tracking-wide antialiased">
+          <p className="inline-block text-center w-full font-sans tracking-wide antialiased text-xs sm:text-base">
             {text}
           </p>
         </div>

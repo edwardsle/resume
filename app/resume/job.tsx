@@ -25,7 +25,7 @@ export default function Job({
 
   return (
     <motion.div
-      className="group/job relative pl-8"
+      className="group/job relative pl-4 sm:pl-8"
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -42,12 +42,12 @@ export default function Job({
       {/* Card */}
       <motion.div
         onClick={() => setActive(!active)}
-        className="cursor-pointer rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 p-5 transition-all duration-300 hover:border-brand-200 hover:shadow-lg"
+        className="cursor-pointer rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 p-3 sm:p-5 transition-all duration-300 hover:border-brand-200 hover:shadow-lg"
         whileHover={{ y: -2 }}
       >
         {/* Top row */}
         <div className="flex items-center gap-4">
-          <div className="size-24 shrink-0 flex items-center justify-center bg-gradient-to-br from-brand-50 to-slate-50 border border-slate-100 rounded-xl p-3 group-hover/job:from-brand-100 transition-colors duration-300">
+          <div className="size-16 sm:size-24 shrink-0 flex items-center justify-center bg-gradient-to-br from-brand-50 to-slate-50 border border-slate-100 rounded-xl p-2 sm:p-3 group-hover/job:from-brand-100 transition-colors duration-300">
             <img alt={company} src={`/img/${logo}`} className="w-full object-contain" />
           </div>
           <div className="flex-1 min-w-0">

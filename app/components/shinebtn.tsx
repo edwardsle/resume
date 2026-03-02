@@ -5,14 +5,15 @@ import { motion } from "framer-motion";
 interface ShineBtnProps {
   text: string;
   icon?: IconDefinition;
+  small?: boolean;
 }
 
-export default function ShineBtn({ text, icon }: ShineBtnProps) {
+export default function ShineBtn({ text, icon, small }: ShineBtnProps) {
   return (
     <motion.a
       href="https://docs.google.com/document/d/1ioEnWHFtFaYdD-9TF30zQyUGfZ59OeanpoLJevx2ZRc/edit?usp=sharing"
       target="_blank"
-      className="group relative overflow-hidden bg-brand-700 hover:bg-brand-800 focus:ring-4 focus:ring-brand-200 inline-flex items-center px-8 py-3 rounded-xl text-white justify-center transition-colors duration-300 shadow-lg shadow-brand-500/20"
+      className={`group relative overflow-hidden bg-brand-700 hover:bg-brand-800 focus:ring-4 focus:ring-brand-200 inline-flex items-center text-white justify-center transition-colors duration-300 shadow-lg shadow-brand-500/20 ${small ? "px-4 py-1.5 rounded-lg text-xs" : "px-8 py-3 rounded-xl"}`}
       whileHover={{ scale: 1.03, y: -1 }}
       whileTap={{ scale: 0.97 }}
     >

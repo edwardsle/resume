@@ -102,7 +102,7 @@ export default function Jobs() {
     <section className="w-full mx-auto px-4 py-10">
       <SubTitle icon={faBriefcase} text="Experience" />
 
-      <div className="relative ml-8 mt-12 border-l-2 border-brand-200 space-y-8">
+      <div className="relative ml-4 sm:ml-8 mt-8 sm:mt-12 border-l-2 border-brand-200 space-y-6 sm:space-y-8">
         {listJobs.map((job) => (
           <Job
             key={job.company}

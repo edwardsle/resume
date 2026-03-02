@@ -52,7 +52,7 @@ export default function Skills() {
     <section className="w-full p-4">
       <SubTitle icon={faPenRuler} text="Skills" />
       <div className="grid gap-y-10">
-        <div className="grid grid-cols-8 gap-x-4 gap-y-28 lg:gap-y-16">
+        <div className="grid grid-cols-4 lg:grid-cols-8 gap-x-3 sm:gap-x-4 gap-y-16">
           {languages.map((lang) => (
             <Skill
               key={lang.text}
@@ -67,7 +67,7 @@ export default function Skills() {
             />
           ))}
         </div>
-        <div className="grid grid-cols-8 gap-x-4 gap-y-28 lg:gap-y-16">
+        <div className="grid grid-cols-4 lg:grid-cols-8 gap-x-3 sm:gap-x-4 gap-y-16">
           {frameworks.map((lang) => (
             <Skill
               key={lang.text}
@@ -116,7 +116,7 @@ export default function Skills() {
             }
           />
         </div>
-        <div className="grid grid-cols-8 gap-x-4 gap-y-28 lg:gap-y-16">
+        <div className="grid grid-cols-4 lg:grid-cols-8 gap-x-3 sm:gap-x-4 gap-y-16">
           {tools.map((lang) => (
             <Skill
               key={lang.text}
