@@ -314,14 +314,7 @@ export default function SubtitleGenerator() {
               whileHover={{ scale: 1.01 }}
               className="flex min-h-[280px] items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-gradient-to-b from-slate-50 to-blue-50/60 p-6 text-center text-sm leading-7 text-slate-500"
             >
-              <div>
-                Replace this area with <span className="font-semibold text-slate-700">architecture.png</span>
-                <br />
-                <br />
-                Example:
-                <br />
-                {"<img src=\"/images/architecture.png\" alt=\"Architecture diagram\" />"}
-              </div>
+              <img src="/img/projects/2023-ai-subtitle-generator/architecture.png" alt="Architecture diagram" />
             </motion.div>
 
             <motion.div variants={stagger} className="grid gap-2.5">
