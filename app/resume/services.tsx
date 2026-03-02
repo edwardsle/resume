@@ -10,7 +10,9 @@ import {
 
 const services = [
   {
-    title: "12 Embedded Projects",
+    title: "Embedded",
+    count: 12,
+    expandedText: "projects completed",
     tags: [
       { name: 'Docker',    tagColor: 'teal'   },
       { name: 'GStreamer', tagColor: 'red'    },
@@ -23,7 +25,9 @@ const services = [
     border: "border-sky-100",
   },
   {
-    title: "5 AI Solutions",
+    title: "AI",
+    count: 5,
+    expandedText: "solutions completed",
     tags: [
       { name: 'OpenAI',     tagColor: 'cyan'  },
       { name: 'Azure',      tagColor: 'stone' },
@@ -35,7 +39,9 @@ const services = [
     border: "border-teal-200",
   },
   {
-    title: "35 Websites",
+    title: "Web",
+    count: 35,
+    expandedText: "websites completed",
     tags: [
       { name: 'Laravel',    tagColor: 'sky'     },
       { name: 'CodeIgniter',tagColor: 'orange'  },
@@ -49,7 +55,9 @@ const services = [
     border: "border-lime-200",
   },
   {
-    title: "8 Mobile Apps",
+    title: "Mobile App",
+    count: 8,
+    expandedText: "apps completed",
     tags: [
       { name: 'iOS',    tagColor: 'amber' },
       { name: 'Android',tagColor: 'rose'  },
@@ -72,6 +80,8 @@ export default function Services() {
             <Service
               key={sv.title}
               title={sv.title}
+              count={sv.count}
+              expandedText={sv.expandedText}
               tags={sv.tags}
               fontawesome={sv.fontawesome}
               color={sv.color}

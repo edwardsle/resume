@@ -9,6 +9,8 @@ export interface TagProps {
 
 interface ServiceProps {
   title: string;
+  count: number;
+  expandedText: string;
   tags: TagProps[];
   fontawesome: IconDefinition;
   color: string;
@@ -18,6 +20,8 @@ interface ServiceProps {
 
 export default function Service({
   title,
+  count,
+  expandedText,
   tags,
   fontawesome,
   color,
@@ -36,11 +40,19 @@ export default function Service({
         />
       </div>
 
-      <div className="ml-4">
-        <h2 className="font-semibold">{title}</h2>
+      <div className="ml-4 min-w-0 flex-1">
+        {/* Title row */}
+        <div className="flex items-center justify-between">
+          <h2 className="font-semibold">{title}</h2>
+          <span className="inline-flex items-center whitespace-nowrap text-[11px] font-bold rounded-full bg-brand-600 text-white overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] max-w-0 opacity-0 px-0 py-0 group-hover:max-w-[14rem] group-hover:opacity-100 group-hover:px-2.5 group-hover:py-0.5">
+            <span className="shrink-0">{count}</span>
+            <span className="ml-1 whitespace-nowrap">{expandedText}</span>
+          </span>
+        </div>
+
+        {/* Scrolling tags */}
         <div className="overflow-hidden w-full">
           <div className="flex animate-none group-hover:animate-[scroll-left_5s_linear_infinite] whitespace-nowrap text-xs gap-x-2">
-            {/* Original tags */}
             {tags.map((tag) => (
               <ServiceTag
                 key={`original-${tag.name}`}
@@ -48,8 +60,6 @@ export default function Service({
                 tagColor={tag.tagColor}
               />
             ))}
-
-            {/* Duplicated tags for seamless loop */}
             {tags.map((tag, index) => (
               <ServiceTag
                 key={`duplicate-${tag.name}-${index}`}
