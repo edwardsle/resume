@@ -2,10 +2,12 @@ import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import SubTitle from "~/components/subtitle";
 import Project from "./project";
 import OrinStream from "./orinstream";
+import SubtitleGenerator from "./subtitlegenerator";
+import SampleModal from "./samplemodal";
 
 const projects = [
   {
-    title: "OrinStream",
+    title: "Vision Hub",
     category: "embedded",
     img_path: "2025-orinstream",
     first_img: "orinstream.gif",
@@ -56,7 +58,7 @@ const projects = [
     ),
     year: 2023,
     external_link: false,
-    modalContent: <OrinStream />,
+    modalContent: <SubtitleGenerator />,
   },
   {
     title: "IVR For Pizzerias",
@@ -83,7 +85,7 @@ const projects = [
     ),
     year: 2021,
     external_link: false,
-    modalContent: <OrinStream />,
+    modalContent: <SampleModal />,
   },
   {
     title: "Personal Literary Page",

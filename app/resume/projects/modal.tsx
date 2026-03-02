@@ -1,9 +1,6 @@
 import type { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Dialog,
-  DialogPanel,
-} from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -29,12 +26,13 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4">
               <motion.div
+                className="w-full max-w-5xl"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
-                <DialogPanel className="bg-white rounded-2xl shadow-xl max-w-lg w-full overflow-hidden">
+                <DialogPanel className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
                   <div className="flex justify-end p-2">
                     <button
                       onClick={onClose}
@@ -43,7 +41,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
                       ✕
                     </button>
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 overflow-x-auto">
                     {children}
                   </div>
                 </DialogPanel>
