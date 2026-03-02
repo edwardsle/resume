@@ -51,8 +51,12 @@ export default function Service({
         </div>
 
         {/* Scrolling tags */}
+        {/* Scrolling tags */}
         <div className="overflow-hidden w-full">
-          <div className="flex animate-none group-hover:animate-[scroll-left_5s_linear_infinite] whitespace-nowrap text-xs gap-x-2">
+          <div
+            className="flex animate-none group-hover:animate-[scroll-left_linear_infinite] whitespace-nowrap text-xs gap-x-2 w-max"
+            style={{ animationDuration: `${tags.length * 1.5}s` }}
+          >
             {tags.map((tag) => (
               <ServiceTag
                 key={`original-${tag.name}`}
