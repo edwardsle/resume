@@ -3,13 +3,89 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-brand-50: var(--theme-50, #f5f3ff);
+  --color-brand-100: var(--theme-100, #ede9fe);
+  --color-brand-200: var(--theme-200, #ddd6fe);
+  --color-brand-300: var(--theme-300, #c4b5fd);
+  --color-brand-400: var(--theme-400, #a78bfa);
+  --color-brand-500: var(--theme-500, #8b5cf6);
+  --color-brand-600: var(--theme-600, #7c3aed);
+  --color-brand-700: var(--theme-700, #6d28d9);
+  --color-brand-800: var(--theme-800, #5b21b6);
+  --color-brand-900: var(--theme-900, #4c1d95);
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+/* ── Theme palettes ── */
+[data-theme="rose"] {
+  --theme-50: #fff1f2; --theme-100: #ffe4e6; --theme-200: #fecdd3;
+  --theme-300: #fda4af; --theme-400: #fb7185; --theme-500: #f43f5e;
+  --theme-600: #e11d48; --theme-700: #be123c; --theme-800: #9f1239;
+  --theme-900: #881337;
+}
+[data-theme="violet"] {
+  --theme-50: #f5f3ff; --theme-100: #ede9fe; --theme-200: #ddd6fe;
+  --theme-300: #c4b5fd; --theme-400: #a78bfa; --theme-500: #8b5cf6;
+  --theme-600: #7c3aed; --theme-700: #6d28d9; --theme-800: #5b21b6;
+  --theme-900: #4c1d95;
+}
+[data-theme="cyan"] {
+  --theme-50: #ecfeff; --theme-100: #cffafe; --theme-200: #a5f3fc;
+  --theme-300: #67e8f9; --theme-400: #22d3ee; --theme-500: #06b6d4;
+  --theme-600: #0891b2; --theme-700: #0e7490; --theme-800: #155e75;
+  --theme-900: #164e63;
+}
+[data-theme="amber"] {
+  --theme-50: #fffbeb; --theme-100: #fef3c7; --theme-200: #fde68a;
+  --theme-300: #fcd34d; --theme-400: #fbbf24; --theme-500: #f59e0b;
+  --theme-600: #d97706; --theme-700: #b45309; --theme-800: #92400e;
+  --theme-900: #78350f;
+}
+[data-theme="emerald"] {
+  --theme-50: #ecfdf5; --theme-100: #d1fae5; --theme-200: #a7f3d0;
+  --theme-300: #6ee7b7; --theme-400: #34d399; --theme-500: #10b981;
+  --theme-600: #059669; --theme-700: #047857; --theme-800: #065f46;
+  --theme-900: #064e3b;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* ── Base styles ── */
+html, body {
+  @apply bg-slate-50;
+  scroll-behavior: smooth;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-300);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+/* ── Marquee animation for service tags ── */
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── Grain texture overlay ── */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }

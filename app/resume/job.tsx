@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import JobTag from "./jobtag";
 
 interface JobProps {
@@ -23,71 +24,96 @@ export default function Job({
   const [active, setActive] = useState(false);
 
   return (
-    <div className="group/job relative pl-8">
-      {/* Timeline dot — vertically centered, pulse on hover only */}
+    <motion.div
+      className="group/job relative pl-8"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {/* Timeline dot */}
       <div className="absolute -left-[7px] top-1/2 -translate-y-1/2 z-10">
         <span className="relative flex size-3.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-neutral-400 opacity-0 group-hover/job:animate-ping group-hover/job:opacity-75" />
-          <span className="relative inline-flex size-3.5 rounded-full bg-neutral-900" />
+          <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-0 group-hover/job:animate-ping group-hover/job:opacity-60" />
+          <span className="relative inline-flex size-3.5 rounded-full bg-brand-600 border-2 border-white shadow-sm" />
         </span>
       </div>
 
       {/* Card */}
-      <div
+      <motion.div
         onClick={() => setActive(!active)}
-        className="cursor-pointer rounded-2xl bg-white/70 backdrop-blur-md p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+        className="cursor-pointer rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 p-5 transition-all duration-300 hover:border-brand-200 hover:shadow-lg"
+        whileHover={{ y: -2 }}
       >
-        {/* Top row: logo + info + date */}
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-4">
-            <div className="size-30 content-center bg-gradient-to-t from-blue-100 group-hover:from-blue-200 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-50 border border-gray-100 rounded-lg shadow-sm p-4 ">
-              <img alt="" src={`/img/${ logo }`} className="w-full object-cover" />
-            </div>
-            <div>
-              <h3 className="text-base font-semibold text-neutral-900 leading-snug">
-                {title}
-              </h3>
-              <p className="text-sm text-neutral-500">
-                {company} | {location}
-              </p>
-            </div>
+        {/* Top row */}
+        <div className="flex items-center gap-4">
+          <div className="size-24 shrink-0 flex items-center justify-center bg-gradient-to-br from-brand-50 to-slate-50 border border-slate-100 rounded-xl p-3 group-hover/job:from-brand-100 transition-colors duration-300">
+            <img alt={company} src={`/img/${logo}`} className="w-full object-contain" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base font-semibold text-slate-900 leading-snug">
+              {title}
+            </h3>
+            <p className="text-sm text-slate-500 mt-0.5">
+              {company} · {location}
+            </p>
           </div>
         </div>
 
-        {/* Divider */}
-        <span className="flex items-center">
-          <span className="h-px flex-1 bg-gray-300"></span>
-
-          <span className="text-xs text-neutral-500 shrink-0 px-4">{workingStatus}</span>
-
-          <span className="h-px flex-1 bg-gray-300"></span>
-        </span>
+        {/* Date divider */}
+        <div className="flex items-center my-3 gap-3">
+          <span className="h-px flex-1 bg-slate-200" />
+          <span className="text-[11px] text-brand-600 font-medium tracking-wide shrink-0">
+            {workingStatus}
+          </span>
+          <span className="h-px flex-1 bg-slate-200" />
+        </div>
 
         {/* Tags */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5">
           {tags.map((tag) => (
             <JobTag key={tag} text={tag} />
           ))}
         </div>
 
         {/* Expandable details */}
-        <div
-          className={`overflow-hidden transition-all duration-400 ease-in-out ${
-            active ? "max-h-[600px] mt-4" : "max-h-0"
-          }`}
+        <AnimatePresence>
+          {active && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden"
+            >
+              <ul className="list-none mt-4 space-y-2 pl-2 border-l-2 border-brand-200">
+                {responsibility.map((res, i) => (
+                  <motion.li
+                    key={i}
+                    className="text-sm text-slate-600 leading-relaxed pl-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05, duration: 0.3 }}
+                  >
+                    {res}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Expand hint */}
+        <motion.div
+          className="flex justify-center mt-3"
+          animate={{ rotate: active ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <ul className="list-disc pl-5 space-y-1.5">
-            {responsibility.map((res, i) => (
-              <li
-                key={i}
-                className="text-sm text-neutral-600 leading-relaxed"
-              >
-                {res}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+          <svg className="w-4 h-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

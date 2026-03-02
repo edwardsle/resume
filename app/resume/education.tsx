@@ -1,5 +1,4 @@
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router";
 import SubTitle from "~/components/subtitle";
 
 export default function Education() {
@@ -20,11 +19,11 @@ export default function Education() {
           <div className="relative overflow-hidden
             break-words p-[1px] rounded-xl
             bg-white shadow-sm
-            hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500
+            hover:bg-gradient-to-r hover:from-brand-500 hover:via-brand-400 hover:to-brand-600
             mb-6"
           >
             <div className="group-hover:animate-spin transform duration-2000 invisible absolute -top-100 -bottom-100 left-1 right-1 bg-gradient-to-r from-transparent via-white/90 to-transparent group-hover:visible"></div>
-            <div className="relative rounded-xl bg-white group-hover:bg-gradient-to-b group-hover:from-blue-50 px-6">
+            <div className="relative rounded-xl bg-white group-hover:bg-gradient-to-b group-hover:from-brand-50 px-6">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full text-center mt-20">
                   <div className="flex justify-center lg:pt-4 pt-8 pb-0">
@@ -89,20 +88,12 @@ export default function Education() {
           <div className="relative overflow-hidden
             break-words p-[1px] rounded-xl
             bg-white shadow-sm
-            hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500
+            hover:bg-gradient-to-r hover:from-brand-500 hover:via-brand-400 hover:to-brand-600
             mb-6"
           >
             <div className="group-hover:animate-spin transform duration-2000 invisible absolute -top-100 -bottom-100 left-1 right-1 bg-gradient-to-r from-transparent via-white/90 to-transparent group-hover:visible"></div>
-            <div className="relative rounded-xl bg-white group-hover:bg-gradient-to-b group-hover:from-blue-50 px-6">
+            <div className="relative rounded-xl bg-white group-hover:bg-gradient-to-b group-hover:from-brand-50 px-6">
             <div className="flex flex-wrap justify-center">
-              <div className="w-full flex justify-center">
-                <div className="relative">
-                  <img
-                    src="/img/csuf.png"
-                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
-                  />
-                </div>
-              </div>
               <div className="w-full text-center mt-20">
                 <div className="flex justify-center lg:pt-4 pt-8 pb-0">
                   <div className="p-3 text-center">

@@ -93,7 +93,7 @@ const projects = [
     description: "",
     year: 2020,
     external_link: "http://caovikhanh.com/",
-    modalContent: <></>
+    modalContent: <></>,
   },
   {
     title: "Nerdgearz",
@@ -105,7 +105,6 @@ const projects = [
     external_link: "https://nerdgearz.com/",
     modalContent: <></>,
   },
-  ,
   {
     title: "Image Denoising",
     category: "ai",
@@ -133,7 +132,6 @@ const projects = [
     external_link: "https://github.com/edwardsle/imagedenoise",
     modalContent: <></>,
   },
-  ,
   {
     title: "Half-Cheetah",
     category: "ai",
@@ -141,27 +139,26 @@ const projects = [
     first_img: "ai-genetic-alg.jpg",
     description: (
       <div className="space-y-2 max-w-xl">
-      <h1 className="text-lg font-semibold">
-        Neuroevolution in MuJoCo
-      </h1>
+        <h1 className="text-lg font-semibold">
+          Neuroevolution in MuJoCo
+        </h1>
 
-      <p className="text-xs text-gray-300">
-        Python · OpenAI Gym · MuJoCo · Genetic Algorithms · Neural Networks
-      </p>
+        <p className="text-xs text-gray-300">
+          Python · OpenAI Gym · MuJoCo · Genetic Algorithms · Neural Networks
+        </p>
 
-      <ul className="text-sm list-disc list-inside space-y-1">
-        <li>Implemented GA-based neuroevolution for control policies</li>
-        <li>Targeted continuous control in Half-Cheetah simulation</li>
-        <li>Leveraged parallel evaluation for scalable population training</li>
-        <li>Demonstrated gradient-free reinforcement learning approach</li>
-      </ul>
-    </div>
+        <ul className="text-sm list-disc list-inside space-y-1">
+          <li>Implemented GA-based neuroevolution for control policies</li>
+          <li>Targeted continuous control in Half-Cheetah simulation</li>
+          <li>Leveraged parallel evaluation for scalable population training</li>
+          <li>Demonstrated gradient-free reinforcement learning approach</li>
+        </ul>
+      </div>
     ),
     year: 2019,
     external_link: "https://github.com/edwardsle/Genetic-Algorithm",
     modalContent: <></>,
   },
-  ,
   {
     title: "99Lookup",
     category: "web",
@@ -198,6 +195,7 @@ export default function Projects() {
         <div className="grid grid-cols-4 gap-6">
           {projects.map((work) => (
             <Project
+              key={work.title}
               title={work.title}              
               category={work.category}
               img_path={work.img_path}

@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import ServiceTag from "./servicetag";
-import "./service.css"
 
 export interface TagProps {
   name: string;
@@ -56,7 +55,6 @@ export default function Service({
                 key={`duplicate-${tag.name}-${index}`}
                 text={tag.name}
                 tagColor={tag.tagColor}
-                aria-hidden="true"
               />
             ))}
           </div>

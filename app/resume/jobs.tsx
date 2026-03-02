@@ -10,21 +10,10 @@ const listJobs = [
     logo: "iteris.png",
     workingStatus: "Aug 2022 to Present",
     tags: [
-      "Yocto",
-      "U-boot",
-      "Nvidia Jetson Xavier",
-      "Nvidia Jetson Orin",
-      "Gstreamer",
-      "RTSP Server",
-      "C/C++",
-      "Python",
-      "BASH Script",
-      "SHELL Script",
-      "ONVIF",
-      "i.MX 6 Processors",
-      "Sony IMX500",
-      "Bazel",
-      "Monorepo",
+      "Yocto", "U-boot", "Nvidia Jetson Xavier", "Nvidia Jetson Orin",
+      "Gstreamer", "RTSP Server", "C/C++", "Python", "BASH Script",
+      "SHELL Script", "ONVIF", "i.MX 6 Processors", "Sony IMX500",
+      "Bazel", "Monorepo",
     ],
     responsibility: [
       "Develop and implement software of embedded devices and systems.",
@@ -43,24 +32,10 @@ const listJobs = [
     logo: "dentalgameplan.png",
     workingStatus: "Jun 2021 to Aug 2022",
     tags: [
-      "PHP",
-      "CodeIgniter 4",
-      "JavaScript",
-      "SSO authentication",
-      "SAML",
-      "Amazon EC2",
-      "Auto Scaling",
-      "Amazon S3",
-      "Amazon Connect",
-      "AWS API Gateway",
-      "AWS Lambda",
-      "IAM",
-      "CloudWatch",
-      "Amazon Lex",
-      "Serverless",
-      "AWS DynamoDB",
-      "Twilio",
-      "bulk SMS",
+      "PHP", "CodeIgniter 4", "JavaScript", "SSO authentication", "SAML",
+      "Amazon EC2", "Auto Scaling", "Amazon S3", "Amazon Connect",
+      "AWS API Gateway", "AWS Lambda", "IAM", "CloudWatch", "Amazon Lex",
+      "Serverless", "AWS DynamoDB", "Twilio", "bulk SMS",
     ],
     responsibility: [
       "Developed and maintained backend systems using PHP and CodeIgniter 4.",
@@ -81,23 +56,11 @@ const listJobs = [
     logo: "vietsky.png",
     workingStatus: "May 2018 to Mar 2022",
     tags: [
-      "Broadcast Engineering",
-      "Live Production",
-      "Video Encoding",
-      "Signal Routing",
-      "Playout Automation",
-      "FFmpeg",
-      "NFS",
-      "Samba",
-      "Active Directory",
-      "Network Administration",
-      "SAN/NAS",
-      "ENG",
-      "CCU Control",
-      "Teleprompter Control",
-      "Transcoding Automation",
-      "VMix",
-      "EDIUS",
+      "Broadcast Engineering", "Live Production", "Video Encoding",
+      "Signal Routing", "Playout Automation", "FFmpeg", "NFS", "Samba",
+      "Active Directory", "Network Administration", "SAN/NAS", "ENG",
+      "CCU Control", "Teleprompter Control", "Transcoding Automation",
+      "VMix", "EDIUS",
     ],
     responsibility: [
       "Engineered broadcast video pipelines and signal routing for live and recorded content.",
@@ -117,22 +80,9 @@ const listJobs = [
     logo: "bolsagroup.png",
     workingStatus: "Aug 2017 to Feb 2020",
     tags: [
-      "Full-stack",
-      "MySQL",
-      "PHP",
-      "JavaScript",
-      "REST API",
-      "Laravel",
-      "React.js",
-      "Express.js",
-      "JSON",
-      "XML",
-      "Bootstrap 4",
-      "jQuery",
-      "October CMS",
-      "Shopify",
-      "Git",
-      "CI/CD",
+      "Full-stack", "MySQL", "PHP", "JavaScript", "REST API", "Laravel",
+      "React.js", "Express.js", "JSON", "XML", "Bootstrap 4", "jQuery",
+      "October CMS", "Shopify", "Git", "CI/CD",
     ],
     responsibility: [
       "Built web apps using Laravel 5.x/6.x, PHP 7, and MySQL",
@@ -149,11 +99,10 @@ const listJobs = [
 
 export default function Jobs() {
   return (
-    <section className="w-full mx-auto px-4 py-20">
+    <section className="w-full mx-auto px-4 py-10">
       <SubTitle icon={faBriefcase} text="Experience" />
 
-      {/* Timeline container with vertical line */}
-      <div className="relative ml-8 mt-12 border-l-2 border-neutral-200 space-y-9">
+      <div className="relative ml-8 mt-12 border-l-2 border-brand-200 space-y-8">
         {listJobs.map((job) => (
           <Job
             key={job.company}

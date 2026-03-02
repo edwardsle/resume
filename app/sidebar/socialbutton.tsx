@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 interface SocialPlatformConfig {
   icon: IconDefinition;
@@ -40,21 +41,19 @@ export default function SocialButton({ platform, username }: SocialBtnProps) {
   };
 
   const config = socialPlatforms[platform];
-
-  if (!config) {
-    console.error(`Unsupported platform: ${platform}`);
-    return null;
-  }
+  if (!config) return null;
 
   return (
-    <a
-      href={ config.baseUrl }
+    <motion.a
+      href={config.baseUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-400 hover:scale-125 hover:text-gray-800 transition delay-150 duration-300 hover:shadow-xl focus:outline-hidden active:outline-hidden"
+      className="text-slate-300 hover:text-brand-500 transition-colors duration-300 focus:outline-hidden active:outline-hidden"
+      whileHover={{ scale: 1.2, y: -2 }}
+      whileTap={{ scale: 0.95 }}
       aria-label={`Visit my ${platform} profile`}
     >
-      <FontAwesomeIcon icon={config.icon} size="3x" className="social-icon" />
-    </a>
+      <FontAwesomeIcon icon={config.icon} size="2x" />
+    </motion.a>
   );
 }
