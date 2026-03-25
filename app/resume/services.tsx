@@ -12,7 +12,7 @@ const services = [
   {
     title: "Embedded",
     count: 12,
-    expandedText: "projects completed",
+    expandedText: "systems developed",
     tags: [
       { name: 'NXP i.MX6',        tagColor: 'red'     },
       { name: 'ESP32',            tagColor: 'teal'    },
@@ -33,7 +33,7 @@ const services = [
   {
     title: "AI",
     count: 5,
-    expandedText: "solutions completed",
+    expandedText: "solutions delivered",
     tags: [
       { name: 'DeepStream',       tagColor: 'teal'    },
       { name: 'TensorRT',         tagColor: 'lime'    },
@@ -55,7 +55,7 @@ const services = [
   {
     title: "Web",
     count: 35,
-    expandedText: "websites completed",
+    expandedText: "web launched",
     tags: [
       { name: 'Blade',          tagColor: 'red'     },
       { name: 'Artisan',        tagColor: 'orange'   },
@@ -76,7 +76,7 @@ const services = [
   {
     title: "Mobile App",
     count: 8,
-    expandedText: "apps completed",
+    expandedText: "apps published",
     tags: [
       { name: 'Xcode',             tagColor: 'sky'     },
       { name: 'Android Studio',    tagColor: 'lime'    },
