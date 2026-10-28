@@ -74,7 +74,7 @@ const services = [
     border: "border-lime-200",
   },
   {
-    title: "Mobile App",
+    title: "Mobile",
     count: 8,
     expandedText: "apps published",
     tags: [
